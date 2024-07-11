@@ -32,7 +32,7 @@ RESIZED = 100
 
 
 #Creates the objet rocket, and get the rectangle of boundaries 
-rocketIMG = pygame.image.load('rocket.png')
+rocketIMG = pygame.image.load('Videogame/rocket.png')
 rocketIMG = pygame.transform.scale(rocketIMG,(RESIZED, RESIZED))
 
 #The rectange starts in the botton
@@ -42,7 +42,7 @@ rocket_rect.top = screen_h - rocket_rect.height
 
 
 #Initialization of the background image 
-background = pygame.image.load('background.png')
+background = pygame.image.load('Videogame/background.png')
 background = pygame.transform.scale(background,(screen_w, screen_h))
 Background = GameUtilities.Background(background, screen,screen_w,screen_h)
 
@@ -53,7 +53,7 @@ rocket_Move = GameUtilities.move(screen_w,screen_h,rocket_rect.width, rocket_rec
 
 
 #We charge the asteorid image, and get the rectangle of it.
-Asteroid = pygame.image.load('asteroid.png')
+Asteroid = pygame.image.load('Videogame/asteroid.png')
 Asteroid = pygame.transform.scale(Asteroid,(40,40))
 Asteroid_rect = Asteroid.get_rect()
 
@@ -215,7 +215,8 @@ while not crashed:
         
         T1 = time.time()
         
-        if T1 - T0 > 5:
+        
+        if T1 - T0 > 50:
             crashed = True
             pygame.quit()
             sys.exit()
@@ -226,7 +227,7 @@ while not crashed:
     #Plots the score in the screen
     if SCORE > 0:
         font = pygame.font.Font(None, 36)
-        score_text = font.render(f'Score: {SCORE}', True, (255, 255, 255))
+        score_text = font.render(f'VIDAS: {SCORE}', True, (255, 255, 255))
         screen.blit(score_text, (10, 10))
          
     
